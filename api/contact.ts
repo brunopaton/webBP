@@ -37,7 +37,7 @@ export default async function (req: any, res: any) { // Use 'any' se não instal
 
         await client.messages.create(MAILGUN_DOMAIN, {
             from: `BP Host Contact <${email}>`, 
-            to: "devgustavomorais@gmail.com", 
+            to: "bruno.paton@gmail.com", 
             subject: `[Contato - Site] Novo contato de ${name}`,
             text: `
                 Nome: ${name}

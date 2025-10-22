@@ -27,10 +27,12 @@ const Hero = () => {
             Transforme sua operação em uma fintech completa. A BP Host oferece consultoria especializada e tecnologia de ponta para estruturar e operar soluções de pagamentos personalizadas do onboarding à liquidação.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="https://wa.me/5511987474707?text=Quero ter minha Fintech!" target="_blank" rel="noopener noreferrer">
             <Button size="lg" variant="accent" className="text-lg px-8 py-6 h-auto">
               Quero ter minha Fintech
               <ArrowRight className="ml-2" />
             </Button>
+            </a>
           </div>
         </div>
       </div>
