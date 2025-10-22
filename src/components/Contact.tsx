@@ -16,34 +16,42 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validação básica
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive"
-      });
-      return;
-    }
 
-    // Aqui você pode adicionar a lógica de envio do formulário
+  if (!formData.name || !formData.email || !formData.message) {
     toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
+      title: "Campos obrigatórios",
+      description: "Por favor, preencha todos os campos obrigatórios.",
+      variant: "destructive"
+    });
+    return;
+  }
+
+  const res = await fetch("/api/contact", { 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
     });
 
-    // Limpar formulário
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
-  };
+    if (res.ok) {
+        toast({
+            title: "Mensagem enviada!",
+            description: "Entraremos em contato em breve.",
+        });
+        setFormData({ name: "", company: "", email: "", phone: "", message: "" });
+    } else {
+        // Se a função retornar um erro (status 400 ou 500), isso cai no 'else'
+        // Seria uma boa prática tentar ler o corpo do erro (res.json()) para dar um feedback melhor.
+        const errorData = await res.json();
+        toast({
+            title: "Erro ao enviar mensagem",
+            description: errorData.message || "Tente novamente mais tarde.",
+            variant: "destructive"
+        });
+    }
+};
+
 
   return (
     <section id="contato" className="py-20 gradient-subtle">
