@@ -45,7 +45,9 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="default">Seja parceiro</Button>
+            <a href="https://wa.me/5511987474707?text=Quero Ser Parceiro BP Host!" target="_blank" rel="noopener noreferrer">
+            <Button  variant="default" >Seja parceiro</Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -73,7 +75,9 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <a href="#contato">
             <Button variant="default" className="mt-2">Seja parceiro</Button>
+            </a>
           </nav>
         </div>
       )}

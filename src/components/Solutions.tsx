@@ -60,7 +60,7 @@ const Solutions = () => {
 
           <div className="text-center">
             <p className="text-xl mb-6">Da consultoria à operação, a BP Host é o seu parceiro completo no universo dos meios de pagamento.</p>
-            <Button size="lg" variant="default">Fale com um especialista</Button>
+            <a href="#contato"> <Button size="lg" variant="default">Fale com um especialista</Button></a>
           </div>
         </div>
       </div>

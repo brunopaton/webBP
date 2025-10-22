@@ -15,7 +15,7 @@ const Partners = () => {
           </p>
           <div className="mt-12">
             <p className="text-xl mb-6 font-medium">Junte-se a um ecossistema que cresce com segurança e inovação.</p>
-            <Button size="lg" variant="accent">Seja parceiro BP Host</Button>
+            <a href="https://wa.me/5511987474707?text=Quero Ser Parceiro BP Host!" target="_blank" rel="noopener noreferrer"> <Button size="lg" variant="accent">Seja parceiro BP Host</Button> </a>
           </div>
         </div>
       </div>
