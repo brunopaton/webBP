@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Isso impede que a chave da API seja enviada!
+# Isso impede que a chave da gAPI seja enviada!
 /.env
